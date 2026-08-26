@@ -8,10 +8,7 @@ Application Spring Boot exposant une API REST de location de voitures.
 ./gradlew bootRun          # Linux / macOS
 gradlew.bat bootRun        # Windows
 ```
-
-Ou depuis l'IDE : exécuter `src/main/java/com/example/tp1/Tp1Application.java`.
-
-Puis ouvrir <http://localhost:8080> (page d'accueil qui rappelle les URI disponibles).
+ <http://localhost:8080>
 
 > Le projet généré par Spring Initializr ne contenait que `spring-boot-starter` :
 > la dépendance `spring-boot-starter-web` a été ajoutée dans `build.gradle`,
