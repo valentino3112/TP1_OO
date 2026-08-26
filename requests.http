@@ -1,0 +1,44 @@
+### Page d'accueil
+GET http://localhost:8080/
+
+### Toutes les voitures
+GET http://localhost:8080/cars
+
+### Les voitures NON louees
+GET http://localhost:8080/cars?rented=false
+
+### Les voitures louees
+GET http://localhost:8080/cars?rented=true
+
+### Une voiture
+GET http://localhost:8080/cars/11AA22
+
+### Une voiture inconnue -> 404
+GET http://localhost:8080/cars/ZZ99ZZ
+
+### Louer une voiture
+PUT http://localhost:8080/cars/11AA22?rent=true
+Content-Type: application/json
+
+{
+  "begin": "11/11/2017",
+  "end": "1/1/2018"
+}
+
+### La louer une deuxieme fois -> 409
+PUT http://localhost:8080/cars/11AA22?rent=true
+Content-Type: application/json
+
+{
+  "begin": "11/11/2017",
+  "end": "1/1/2018"
+}
+
+### Louer sans corps de requete -> 400
+PUT http://localhost:8080/cars/AA11BB?rent=true
+
+### Rendre la voiture
+PUT http://localhost:8080/cars/11AA22?rent=false
+
+### La rendre une deuxieme fois -> 409
+PUT http://localhost:8080/cars/11AA22?rent=false
